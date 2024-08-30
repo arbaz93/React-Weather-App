@@ -1,0 +1,4 @@
+#API_KEY: e7fbf64782374509b8634932242708
+#BASIC: http://api.weatherapi.com/v1/current.json?key=<YOUR_API_KEY>&q=London
+#DAYS: http://api.weatherapi.com/v1/forecast.json?key=<YOUR_API_KEY>&q=07112&days=7
+#SEARCH: http://api.weatherapi.com/v1/search.json?key=<YOUR_API_KEY>&q=lond
