@@ -28,7 +28,7 @@ function App() {
     if (position != {}) {
       const x = position.coords.latitude;
       const y = position.coords.longitude;
-      const req = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=${time}`)
+      const req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=${time}`)
       const res = await req.json();
       setWeather(res);
 
@@ -78,7 +78,7 @@ function App() {
     setSortedWheather(undefined)
     const x = position.coords.latitude;
     const y = position.coords.longitude;
-    const req = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=7`);
+    const req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=7`);
     const res = await req.json();
     setWeather(res);
     let weeklyData = {
@@ -108,7 +108,7 @@ function App() {
         setUserLocation(position)
         const x = position.coords.latitude;
         const y = position.coords.longitude;
-        fetch(`http://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=${1}`)
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=${1}`)
           .then(r => r.json())
           .then(r => {
             setWeather(r);
@@ -133,200 +133,200 @@ function App() {
   function getMoodImage(text) {
     let conditions = [
       {
-          "day": "Sunny",
-          "image": "sunny.svg"
+        "day": "Sunny",
+        "image": "sunny.svg"
       },
       {
-          "day": "Partly cloudy",
-          "image": "sunny cloudy.svg"
+        "day": "Partly cloudy",
+        "image": "sunny cloudy.svg"
       },
       {
-          "day": "Cloudy",
-          "image": "cloudy.svg"
+        "day": "Cloudy",
+        "image": "cloudy.svg"
       },
       {
-          "day": "Overcast",
-          "image": "double cloudy.svg"
+        "day": "Overcast",
+        "image": "double cloudy.svg"
       },
       {
-          "day": "Mist",
-          "image": "double cloudy.svg"
+        "day": "Mist",
+        "image": "double cloudy.svg"
       },
       {
-          "day": "Patchy rain possible",
-          "image": "dribbling.svg"
+        "day": "Patchy rain possible",
+        "image": "dribbling.svg"
       },
       {
-          "day": "Patchy rain nearby",
-          "image": "dribbling.svg"
+        "day": "Patchy rain nearby",
+        "image": "dribbling.svg"
       },
       {
-          "day": "Patchy snow possible",
-          "image": "dribbling.svg"
+        "day": "Patchy snow possible",
+        "image": "dribbling.svg"
       },
       {
-          "day": "Patchy sleet possible",
-          "image": "snowing.svg"
+        "day": "Patchy sleet possible",
+        "image": "snowing.svg"
       },
       {
-          "day": "Patchy freezing drizzle possible",
-          "image": "snowing.svg"
+        "day": "Patchy freezing drizzle possible",
+        "image": "snowing.svg"
       },
       {
-          "day": "Thundery outbreaks possible",
-          "image": "thunder.svg"
+        "day": "Thundery outbreaks possible",
+        "image": "thunder.svg"
       },
       {
-          "day": "Blowing snow",
-          "image": "snowing.svg"
+        "day": "Blowing snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Blizzard",
-          "image": "snowing.svg"
+        "day": "Blizzard",
+        "image": "snowing.svg"
       },
       {
-          "day": "Fog",
-          "image": "double cloudy.svg"
+        "day": "Fog",
+        "image": "double cloudy.svg"
       },
       {
-          "day": "Freezing fog",
-          "image": "double cloudy.svg"
+        "day": "Freezing fog",
+        "image": "double cloudy.svg"
       },
       {
-          "day": "Patchy light drizzle",
-          "image": "dribbling.svg"
+        "day": "Patchy light drizzle",
+        "image": "dribbling.svg"
       },
       {
-          "day": "Light drizzle",
-          "image": "dribbling.svg"
+        "day": "Light drizzle",
+        "image": "dribbling.svg"
       },
       {
-          "day": "Freezing drizzle",
-          "image": "dribbling.svg"
+        "day": "Freezing drizzle",
+        "image": "dribbling.svg"
       },
       {
-          "day": "Heavy freezing drizzle",
-          "image": "raining.svg"
+        "day": "Heavy freezing drizzle",
+        "image": "raining.svg"
       },
       {
-          "day": "Patchy light rain",
-          "image": "raining.svg"
+        "day": "Patchy light rain",
+        "image": "raining.svg"
       },
       {
-          "day": "Light rain",
-          "image": "raining.svg"
+        "day": "Light rain",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate rain at times",
-          "image": "raining.svg"
+        "day": "Moderate rain at times",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate rain",
-          "image": "raining.svg"
+        "day": "Moderate rain",
+        "image": "raining.svg"
       },
       {
-          "day": "Heavy rain at times",
-          "image": "raining.svg"
+        "day": "Heavy rain at times",
+        "image": "raining.svg"
       },
       {
-          "day": "Heavy rain",
-          "image": "raining.svg"
+        "day": "Heavy rain",
+        "image": "raining.svg"
       },
       {
-          "day": "Light freezing rain",
-          "image": "raining.svg"
+        "day": "Light freezing rain",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate or heavy freezing rain",
-          "image": "raining.svg"
+        "day": "Moderate or heavy freezing rain",
+        "image": "raining.svg"
       },
       {
-          "day": "Light sleet",
-          "image": "raining.svg"
+        "day": "Light sleet",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate or heavy sleet",
-          "image": "raining.svg"
+        "day": "Moderate or heavy sleet",
+        "image": "raining.svg"
       },
       {
-          "day": "Patchy light snow",
-          "image": "snowing.svg"
+        "day": "Patchy light snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Light snow",
-          "image": "snowing.svg"
+        "day": "Light snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Patchy moderate snow",
-          "image": "snowing.svg"
+        "day": "Patchy moderate snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Moderate snow",
-          "image": "snowing.svg"
+        "day": "Moderate snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Patchy heavy snow",
-          "image": "snowing.svg"
+        "day": "Patchy heavy snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Heavy snow",
-          "image": "snowing.svg"
+        "day": "Heavy snow",
+        "image": "snowing.svg"
       },
       {
-          "day": "Ice pellets",
-          "image": "snowing.svg"
+        "day": "Ice pellets",
+        "image": "snowing.svg"
       },
       {
-          "day": "Light rain shower",
-          "image": "raining.svg"
+        "day": "Light rain shower",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate or heavy rain shower",
-          "image": "raining.svg"
+        "day": "Moderate or heavy rain shower",
+        "image": "raining.svg"
       },
       {
-          "day": "Torrential rain shower",
-          "image": "raining.svg"
+        "day": "Torrential rain shower",
+        "image": "raining.svg"
       },
       {
-          "day": "Light sleet showers",
-          "image": "raining.svg"
+        "day": "Light sleet showers",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate or heavy sleet showers",
-          "image": "raining.svg"
+        "day": "Moderate or heavy sleet showers",
+        "image": "raining.svg"
       },
       {
-          "day": "Light snow showers",
-          "image": "raining.svg"
+        "day": "Light snow showers",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate or heavy snow showers",
-          "image": "snowing.svg"
+        "day": "Moderate or heavy snow showers",
+        "image": "snowing.svg"
       },
       {
-          "day": "Light showers of ice pellets",
-          "image": "snowing.svg"
+        "day": "Light showers of ice pellets",
+        "image": "snowing.svg"
       },
       {
-          "day": "Moderate or heavy showers of ice pellets",
-          "image": "snowing.svg"
+        "day": "Moderate or heavy showers of ice pellets",
+        "image": "snowing.svg"
       },
       {
-          "day": "Patchy light rain with thunder",
-          "image": "raining.svg"
+        "day": "Patchy light rain with thunder",
+        "image": "raining.svg"
       },
       {
-          "day": "Moderate or heavy rain with thunder",
-          "image": "thunder.svg"
+        "day": "Moderate or heavy rain with thunder",
+        "image": "thunder.svg"
       },
       {
-          "day": "Patchy light snow with thunder",
-          "image": "snowing.svg"
+        "day": "Patchy light snow with thunder",
+        "image": "snowing.svg"
       },
       {
-          "day": "Moderate or heavy snow with thunder",
-          "image": "snowing.svg"
+        "day": "Moderate or heavy snow with thunder",
+        "image": "snowing.svg"
       }
     ]
     if(conditions.findIndex(el => el.day.toLowerCase() == text.toLowerCase()) == -1) return "/src/assets/cloudy.svg"
