@@ -329,11 +329,11 @@ function App() {
         "image": "snowing.svg"
       }
     ]
-    if(conditions.findIndex(el => el.day.toLowerCase() == text.toLowerCase()) == -1) return "/src/assets/cloudy.svg"
+    if(conditions.findIndex(el => el.day.toLowerCase() == text.toLowerCase()) == -1) return "src/assets/cloudy.svg"
     let y = conditions.find(elem => {
       return elem.day.toLowerCase() == text.toLowerCase()
     })
-    let image = `/src/assets/${y.image}`;
+    let image = `src/assets/${y.image}`;
     return image
 
   }
