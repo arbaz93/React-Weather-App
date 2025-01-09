@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { TimeOption } from './TimeOption';
+const API_KEY = import.meta.env.VITE_WHEATHER_API_KEY;
 
 function App() {
   const [userLocation, setUserLocation] = useState({});
@@ -12,6 +13,7 @@ function App() {
   const [defaultWheather, setdefaultWheather] = useState(0);
   const [mood, setMood] = useState("Please wait");
   const [location, setLocation] = useState("Please wait");
+
   function getUserLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -28,7 +30,7 @@ function App() {
     if (position != {}) {
       const x = position.coords.latitude;
       const y = position.coords.longitude;
-      const req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=${time}`)
+      const req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${x},${y}&days=${time}`)
       const res = await req.json();
       setWeather(res);
 
@@ -78,8 +80,9 @@ function App() {
     setSortedWheather(undefined)
     const x = position.coords.latitude;
     const y = position.coords.longitude;
-    const req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=7`);
+    const req = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${x},${y}&days=7`);
     const res = await req.json();
+    console.log(res)
     setWeather(res);
     let weeklyData = {
       date: res.location.localtime,
@@ -108,7 +111,7 @@ function App() {
         setUserLocation(position)
         const x = position.coords.latitude;
         const y = position.coords.longitude;
-        fetch(`https://api.weatherapi.com/v1/forecast.json?key=e7fbf64782374509b8634932242708&q=${x},${y}&days=${1}`)
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${x},${y}&days=${1}`)
           .then(r => r.json())
           .then(r => {
             setWeather(r);
